@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="en">
+<head>
+    <meta charset="UTF-8"></meta>
+    <title>Contract Details</title>
+</head>
+<body>
+<h1>Contract Information</h1>
+
+<p>Contract ID: <span th:text="${contractId}">Contract ID</span></p>
+<p><span class="highlight">Sales Partner:</span> <span th:text="${salesPartner}"></span></p>
+
+<div class="section">
+    <h2>Address Information</h2>
+    <p><span class="highlight">Address 1:</span> <span th:text="${address1}"></span></p>
+    <p><span class="highlight">Address 2:</span> <span th:text="${address2}"></span></p>
+    <p><span class="highlight">Street Address:</span> <span th:text="${streetAddress}"></span></p>
+    <p><span class="highlight">City:</span> <span th:text="${city}"></span></p>
+    <p><span class="highlight">State:</span> <span th:text="${state}"></span></p>
+    <p><span class="highlight">Zip Code:</span> <span th:text="${zip}"></span></p>
+</div>
+
+<h2>Contact Information</h2>
+<ul>
+    <li><span class="highlight">Phone Land 1:</span> <span th:text="${phoneLand1}"></span></li>
+    <li><span class="highlight">Phone Land 2:</span> <span th:text="${phoneLand3}"></span></li>
+    <li><span class="highlight">Email Address:</span> <span th:text="${emailAddress}"></span></li>
+</ul>
+
+<h3>Mailing Information</h3>
+<p><span class="highlight">Mailing Address:</span> <span th:text="${mailingAddress}"></span></p>
+<p><span class="highlight">City:</span> <span th:text="${city2}"></span></p>
+<p><span class="highlight">State:</span> <span th:text="${state2}"></span></p>
+<p><span class="highlight">Zip Code:</span> <span th:text="${zip2}"></span></p>
+
+<div class="section">
+    <h2>Full Address</h2>
+    <p th:text="${fullAddress}"></p>
+</div>
+
+
+<h2>Owners:</h2>
+<ul>
+    <ul>
+        <li th:each="owner : ${contractParams['owners']}">
+            <p th:text="${owner.firstName} + ' ' + ${owner.lastName}"></p>
+        </li>
+    </ul>
+
+</ul>
+
+</body>
+</html>
